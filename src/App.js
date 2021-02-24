@@ -1,36 +1,24 @@
-import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.scss';
-import { Row } from 'react-bootstrap';
-import { Container } from 'react-bootstrap';
-import { Col } from 'react-bootstrap';
-import Hero  from './Components/Hero';
-import { Confirmation } from './Components/Confirmation'
-import heroes  from './data'
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import  Navigation  from "./Components/Navigation";
+import  Footer  from "./Components/Footer";
+import  Home  from "./Components/Home";
+import  Heroes from "./Components/Heroes";
+import  Team  from "./Components/Team";
 
 function App() {
-
-  const [ordered, setOrdered] = useState(false)
-
-  function displayConfirmation() {
-    setOrdered(true);
-
-    setTimeout(() => {
-      setOrdered(false);
-    }, 3000);
-  }
-
   return (
-    <Container>
-      {ordered && <Confirmation toggle={setOrdered}/>}
-      <Row>
-        {heroes.map(data => (
-          <Col xs={6} sm={6} md={4} lg={3} xl={3} className="mb-5" key={`${data.id}`}>
-            <Hero data={data} setOrdered={displayConfirmation}/>
-          </Col>
-        ))}
-      </Row>
-    </Container>
+    <div className="App">
+      <Router>
+        <Navigation />
+        <Switch>
+          <Route path="/" exact component={() => <Home />} />
+          <Route path="/heroes" exact component={() => <Heroes />} />
+          <Route path="/team" exact component={() => <Team />} />
+        </Switch>
+        <Footer />
+      </Router>
+    </div>
   );
 }
 
