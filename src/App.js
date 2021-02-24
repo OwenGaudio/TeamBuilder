@@ -25,7 +25,7 @@ function App() {
       {ordered && <Confirmation toggle={setOrdered}/>}
       <Row>
         {heroes.map(data => (
-          <Col class="col-lg-3 col-md-4 col-sm-6 col-xs-6" key={`${data.id}`}>
+          <Col xs={6} sm={6} md={4} lg={3} xl={3} className="mb-5" key={`${data.id}`}>
             <Hero data={data} setOrdered={displayConfirmation}/>
           </Col>
         ))}
