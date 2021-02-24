@@ -7,7 +7,7 @@ function Navigation(props) {
       <nav class="navbar navbar-expand navbar-dark bg-primary">
         <div class="container">
           <Link class="navbar-brand" to="/">
-            Overwatch Team Builder
+            Team Builder
           </Link>
 
           <div>
