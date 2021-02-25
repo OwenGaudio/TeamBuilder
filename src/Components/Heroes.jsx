@@ -5,7 +5,8 @@ import { Container } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 import Hero  from './Hero';
 import { Confirmation } from './Confirmation'
-import heroes  from "./data.json"
+import heroes  from "./data.json";
+import "./HeroStyling.scss";
 
 function Heroes() {
     const [ordered, setOrdered] = useState(false)

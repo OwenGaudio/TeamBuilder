@@ -1,0 +1,36 @@
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900');
+
+html{
+    -webkit-box-sixing: border-box;
+            box-sizing: border-box;
+}
+*, *:before, *:after{
+    -webkit-box-sizing: inherit;
+            box-sizing: inherit;
+}
+
+$font-used: 'Roboto', sans-serif;
+$b-color: '#fbfbfb';
+$t-color: '#202020';
+
+.jumbo{
+    background: url('./header-img.jpg') no-repeat fixed bottom;
+    background-size: cover;
+    color: $t-color;
+    height: 200px;
+    position: relative;
+    z-index: -2;
+}
+
+.overlay{
+    background-color: $b-color;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
