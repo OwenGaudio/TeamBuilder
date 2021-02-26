@@ -1,6 +1,28 @@
 @import "node_modules/bootstrap/scss/bootstrap.scss";
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900');
 
+@mixin center($width: null, $height: null) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  
+    @if not $width and not $height {
+      transform: translate(-50%, -50%);
+    } @else if $width and $height {
+      width: $width;
+      height: $height;
+      margin: -($width / 2) #{0 0} -($height / 2);
+    } @else if not $height {
+      width: $width;
+      margin-left: -($width / 2);
+      transform: translateY(-50%);
+    } @else {
+      height: $height;
+      margin-top: -($height / 2);
+      transform: translateX(-50%);
+    }
+  }
+
 html{
     -webkit-box-sixing: border-box;
             box-sizing: border-box;
@@ -11,20 +33,20 @@ html{
 }
 
 $font-used: 'Roboto', sans-serif;
-$b-color: '#fbfbfb';
-$t-color: '#202020';
+$b-color: #fbfbfb;
+$t-color: #202020;
 
 .jumbo{
     background: url('./header-img.jpg') no-repeat fixed bottom;
     background-size: cover;
-    color: $t-color;
+    color: $b-color;
     height: 200px;
     position: relative;
     z-index: -2;
 }
 
 .overlay{
-    background-color: $b-color;
+    background-color: $t-color;
     opacity: 0.6;
     position: absolute;
     top: 0;
@@ -34,3 +56,25 @@ $t-color: '#202020';
     z-index: -1;
 }
 
+.panel{
+    border-radius: 5px;
+    position: relative;
+    background-color: $t-color;
+    color: $b-color;
+}
+
+.panel-body{
+    padding: 0;
+    line-height: 1.5;
+    padding: 18px;
+    font-size: large;
+    font-family: $font-used;
+    color: $b-color;
+    font-smooth: always;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.panel{
+    padding: 10px;
+}

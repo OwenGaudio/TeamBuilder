@@ -1,4 +1,5 @@
 import React from "react";
+import team  from "./team.json";
 
 function Team() {
   return (

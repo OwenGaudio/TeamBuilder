@@ -10,22 +10,24 @@ import "./HeroStyling.scss";
 
 function Heroes() {
     const [ordered, setOrdered] = useState(false)
+    const [name, setName] = useState("")
 
-    function displayConfirmation() {
+    function displayConfirmation(hero) {
       setOrdered(true);
-  
+      setName(hero)
+
       setTimeout(() => {
         setOrdered(false);
-      }, 3000);
+      }, 5000);
     }
   
     return (
        <Container>
-         {ordered && <Confirmation toggle={setOrdered}/>}
+         {ordered && <Confirmation name={name} toggle={setOrdered}/>}
           <Row>
             {heroes.map(data => (
               <Col xs={6} sm={6} md={4} lg={3} xl={3} className="mb-5" key={`${data.id}`}>
-                <Hero data={data} setOrdered={displayConfirmation}/>
+                <Hero data={data} displayConfirmation={displayConfirmation}/>
              </Col>
            ))}
          </Row>

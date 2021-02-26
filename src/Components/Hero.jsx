@@ -1,9 +1,10 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
+import { Card, Container } from 'react-bootstrap';
 import { Badge } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
+import { Confirmation } from './Confirmation'
 
-function Hero({ data, setOrdered }) {
+function Hero({ data, displayConfirmation }) {
     return (
         <Card className="h-100 shadow-sm bg-white rounded">
             <Card.Img variant="top" src= {data.image}/>
@@ -16,7 +17,7 @@ function Hero({ data, setOrdered }) {
                 </div>
                 <Card.Text className="text-secondary">{data.desc}</Card.Text>
                 <Button
-                    onClick={() => setOrdered()}
+                    onClick={() => displayConfirmation(data.name)}
                     className="mt-auto font-weight-bold"
                     variant="primary"
                     block>
