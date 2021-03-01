@@ -2,7 +2,6 @@ import React from 'react';
 import { Card, Container } from 'react-bootstrap';
 import { Badge } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
-import { Confirmation } from './Confirmation'
 
 function Hero({ data, displayConfirmation }) {
     return (
