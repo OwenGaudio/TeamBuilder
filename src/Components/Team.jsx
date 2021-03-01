@@ -30,7 +30,7 @@ function Team() {
     <Container>
        <Row>
          {team.map((data, idx) => (
-           <Col xs={3} sm={3} md={4} lg={4} xl={4} className="mb-5" key={`${data.id}`}>
+           <Col xs={6} sm={6} md={4} lg={4} xl={4} className="mb-5" key={`${data.id}`}>
              <HeroSelected data={data} removeCharacter={removeCharacter} idx={idx}/>
           </Col>
         ))}
