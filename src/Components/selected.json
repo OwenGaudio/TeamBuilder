@@ -43,7 +43,7 @@
         "id": 6,
         "name": "D.va",
         "image": "/images/D.va.png",
-        "pose": "/victoryPoses/D.va.png",
+        "pose": "/victoryPoses/D.Va.png",
         "role": "Tank",
         "desc": "D.Va’s mech is nimble and powerful—its twin Fusion Cannons blast away with autofire at short range, and she can use its Boosters to barrel over enemies and obstacles, or deflect attacks with her projectile-dismantling Defense Matrix."
     },
