@@ -14,15 +14,6 @@ $font-used: 'Roboto', sans-serif;
 $b-color: #fbfbfb;
 $t-color: #202020;
 
-.jumbo{
-    background: url('./header-img.jpg') no-repeat fixed bottom;
-    background-size: cover;
-    color: $b-color;
-    height: 200px;
-    position: relative;
-    z-index: -2;
-}
-
 body {
    margin: 20px 0;
    padding: 0;
