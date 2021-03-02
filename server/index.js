@@ -7,8 +7,8 @@ app.use(express.json());
 
 app.get('/api/heroes', ctrl.getHeroes)
 app.get('/api/team', ctrl.getTeam)
-app.put('api/heroes/:id', ctrl.addHero)
-app.delete('api/team', ctrl.deleteTeamMate)
+app.post('/api/team/:id', ctrl.addHero)
+app.delete('/api/team/:id', ctrl.deleteTeammate)
 
-const port = 4000;
+const port = 5000;
 app.listen(port, () => console.log(`Listening on port ${port}`));

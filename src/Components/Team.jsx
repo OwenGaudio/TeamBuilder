@@ -5,24 +5,35 @@ import { Container } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 import HeroSelected  from './HeroSelected';
 import "./HeroStyling.scss";
-import initialTeam from "./selected.json";
-import image from './teambackground.jpg';
+import image from './teambackground.png';
+import axios from 'axios';
 
 var sectionStyle = {
    backgroundImage: `url(${image})`
 }
 
 function Team() {
-
   const [team,setTeam] = useState([])
   useEffect(() => {
-    setTeam(initialTeam)
+    displayTeam()
   },[])
 
+  function displayTeam(){
+    axios.get('/api/team')
+    .then( res => {
+      setTeam(res.data)
+    }).catch( err => console.log(err))
+  }
+
   function removeCharacter(idx){
-    const newTeam = [...team]
-    newTeam.splice(idx,1)
-    setTeam(newTeam)
+    // const newTeam = [...team]
+    // newTeam.splice(idx,1)
+    // setTeam(newTeam)
+
+    axios.delete(`/api/team/${idx}`)
+    .then(res => {
+      setTeam(res.data)
+    }).catch( err => console.log(err))
   }
 
   return (

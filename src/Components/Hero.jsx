@@ -1,9 +1,20 @@
+import axios from 'axios';
 import React from 'react';
 import { Card, Container } from 'react-bootstrap';
 import { Badge } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 
 function Hero({ data, displayConfirmation }) {
+    function handleAddMember(name){
+        axios.post(`/api/team/${data.id}`)
+        .then(res => {
+            console.log(res.data)
+        }).catch( err => alert(err.response.data))
+
+        displayConfirmation(name)
+    }
+
+
     return (
         <Card className="h-100 shadow-sm bg-white rounded">
             <Card.Img variant="top" src= {data.image}/>
@@ -16,7 +27,7 @@ function Hero({ data, displayConfirmation }) {
                 </div>
                 <Card.Text className="text-secondary">{data.desc}</Card.Text>
                 <Button
-                    onClick={() => displayConfirmation(data.name)}
+                    onClick={() => handleAddMember(data.name)}
                     className="mt-auto font-weight-bold"
                     variant="primary"
                     block>

@@ -256,9 +256,9 @@ const heroes = [
         "desc": "Zenyatta calls upon orbs of harmony and discord to heal his teammates and weaken his opponents, all while pursuing a transcendent state of immunity to damage."
 }];
 
-const team = [{
+const team = [];
 
-}];
+let teamID = 1;
 
 //make another an array for team
 //display arrays on page
@@ -275,11 +275,15 @@ module.exports = {
     },
 
     addHero: (req,res) => {
-        const index = heroes.findIndex( hero => hero.id === +req.params.id);
-        team.push(heroes[index])
-        res.status(200).send(team);
+        if(team.length < 6){
+            const index = heroes.findIndex( hero => hero.id === +req.params.id);
+            team.push(heroes[index])
+            res.status(200).send("Hero Added")
+        } else {
+            res.status(500).send("Max Team Members Achieved (cheater)")
+        }   
     },
-    deleteTeamMate: (req,res) => {
+    deleteTeammate: (req,res) => {
         const index = team.findIndex( hero => hero.id === +req.params.id);
         team.splice(index,1)
         res.status(200).send(team);
