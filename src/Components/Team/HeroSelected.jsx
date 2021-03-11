@@ -9,7 +9,6 @@ function HeroSelected({ data, removeCharacter, idx}) {
                 <Button
                     onClick={() => removeCharacter(data.id)}
                     className="mt-auto font-weight-bold"
-                    variant="danger"
                     block>
                         Remove from team
                 </Button>

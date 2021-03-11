@@ -1,0 +1,16 @@
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900');
+
+$baselinePadding: 20px;
+$font-used: 'Roboto', sans-serif;
+$b-color: #fbfbfb;
+$t-color: #202020;
+$mynewcolor:#F99E1A;
+
+form {
+    display: flex;
+    column-gap: 20px;
+    justify-content: space-between;
+    margin: 20px;
+    padding: 20px;
+  }

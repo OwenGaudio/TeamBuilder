@@ -1,10 +1,10 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
+import "./NavigationStyle.scss";
 
 function Navigation(props) {
   return (
-    <div className="navigation">
-      <nav className="navbar navbar-expand navbar-dark bg-primary">
+      <nav className="navbar navbar-expand navbar-light bg-custom">
         <div className="container">
           <Link className="navbar-brand" to="/">
             Team Builder
@@ -44,7 +44,6 @@ function Navigation(props) {
           </div>
         </div>
       </nav>
-    </div>
   );
 }
 

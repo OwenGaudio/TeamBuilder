@@ -1,10 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import  Navigation  from "./Components/Navigation";
-import  Footer  from "./Components/Footer";
-import  Home  from "./Components/Home";
-import  Heroes from "./Components/Heroes";
-import  Team  from "./Components/Team";
+import  Navigation  from "./Components/Navigation/Navigation";
+import  Home  from "./Components/Home/Home";
+import  Heroes from "./Components/Heroes/Heroes";
+import  Team  from "./Components/Team/Team";
 
 function App() {
   return (
@@ -16,7 +15,6 @@ function App() {
           <Route path="/heroes" exact component={() => <Heroes />} />
           <Route path="/team" exact component={() => <Team />} />
         </Switch>
-        <Footer />
       </Router>
     </div>
   );

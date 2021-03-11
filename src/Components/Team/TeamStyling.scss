@@ -13,6 +13,15 @@ html{
 $font-used: 'Roboto', sans-serif;
 $b-color: #fbfbfb;
 $t-color: #202020;
+$mynewcolor:#F99E1A;
+
+.btn-primary {
+    @include button-variant($mynewcolor, darken($mynewcolor, 7.5%), darken($mynewcolor, 10%), lighten($mynewcolor,5%), lighten($mynewcolor, 10%), darken($mynewcolor,30%));
+}
+    
+.btn-outline-primary {
+    @include button-outline-variant($mynewcolor, #222222, lighten($mynewcolor,5%), $mynewcolor);
+}
 
 body {
    margin: 20px 0;
@@ -21,7 +30,6 @@ body {
    font-family: $font-used;
    color: $t-color;
    background-color: $b-color; 
-   font-smooth: always;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
 }

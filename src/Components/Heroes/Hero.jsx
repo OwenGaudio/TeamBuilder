@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React from 'react';
-import { Card, Container } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import { Badge } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 
@@ -29,7 +29,6 @@ function Hero({ data, displayConfirmation }) {
                 <Button
                     onClick={() => handleAddMember(data.name)}
                     className="mt-auto font-weight-bold"
-                    variant="primary"
                     block>
                         Add To Team
                 </Button>
