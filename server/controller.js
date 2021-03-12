@@ -258,8 +258,10 @@ const heroes = [
 
 const team = [];
 let teamID = 1;
-const accountSid = "AC21aef9d2fc2fa6fe8029fefccb2e0e9c";
-const authToken = "203a166676417dd6e5d1c8b80e35d6ce";
+
+require('dotenv').config()
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
 const client = require('twilio')(accountSid, authToken);
 
 module.exports = {
